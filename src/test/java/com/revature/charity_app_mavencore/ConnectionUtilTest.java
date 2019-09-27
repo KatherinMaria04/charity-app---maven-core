@@ -1,4 +1,4 @@
-package com.revature.Charity_app;
+package com.revature.charity_app_mavencore;
 
 import static org.junit.Assert.assertNotNull;
 
