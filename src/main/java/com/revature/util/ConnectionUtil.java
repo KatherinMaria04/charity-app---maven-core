@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class ConnectionUtil {
 	public static Connection getConnection() {
 		String driverClassName = "com.mysql.cj.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/charityfund";
-		String username = "root";
-		String password = "root";
+		String url = "jdbc:mysql://trainingdb.ck1ayq0lncmp.ap-south-1.rds.amazonaws.com/katherin_db";
+		String username = "katherin";
+		String password = "katherin";
 	
 		Connection con = null;
 		try {
@@ -23,6 +23,8 @@ public class ConnectionUtil {
 		}
 		return con;
 	} 
-	
+	public static void main(String args[]) {
+		getConnection();
+	}
 
 }

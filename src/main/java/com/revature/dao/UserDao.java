@@ -90,12 +90,12 @@ public class UserDao implements IUserDao {
 		pst.executeUpdate();
 		
     }
-	public  void updateDonation( AdminAccess admin) throws SQLException {
+	public  void updateDonation( UserActivity user) throws SQLException {
 		Connection con = ConnectionUtil.getConnection();
-		String sql = "update  adminaccess set amt_requested=amt_requested-? where request_type=?";
+		String sql = "update  adminaccess set amt_requested=amt_requested+? where request_type=?";
 		PreparedStatement pst = con.prepareStatement(sql);
-		pst.setLong(1,admin.getAmountrequested());
-		pst.setString(2,admin.getRequesttype());
+		pst.setLong(1,user.getDonatingamount());
+		pst.setString(2, user.getRequesttype());
 		pst.executeUpdate();
 		
     }

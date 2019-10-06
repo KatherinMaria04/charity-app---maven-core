@@ -5,6 +5,8 @@ import java.util.List;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.revature.dao.AdminDao;
+import com.revature.dao.IAdminDao;
 import com.revature.dao.IUserDao;
 import com.revature.dao.UserDao;
 import com.revature.util.ConnectionUtil;
@@ -106,8 +108,8 @@ public class UserFunctions {
 	    AdminAccess admin=new AdminAccess();
 	    admin.setRequesttype(requesttype);
 	    admin.setAmountrequested(amountrequested);
-	    IUserDao dao1= new UserDao();
-	    dao1.updateDonation(admin);
+	    IAdminDao dao1= new AdminDao();
+	    dao1.donationsUpdate(admin);
 	   
 	    
 	   
