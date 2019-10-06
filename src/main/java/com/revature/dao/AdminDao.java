@@ -107,7 +107,7 @@ public  void donationsUpdate( AdminAccess admin) throws SQLException {
 
 public  List<UserDetails> donarDetails() throws SQLException {
     Connection con = ConnectionUtil.getConnection();
-    String sql = "select cus_name,password,phone_num from userlogin";
+    String sql = "select cus_name,phone_num from userlogin";
     PreparedStatement pst = con.prepareStatement(sql);
     ResultSet rs = pst.executeQuery();
     List<UserDetails> list = new ArrayList<UserDetails>();
@@ -120,11 +120,11 @@ public  List<UserDetails> donarDetails() throws SQLException {
 }
 private static UserDetails toRow2(ResultSet rs) throws SQLException {
     String customername = rs.getString("cus_name");
-    String password= rs.getString("password");
+   // String password= rs.getString("password");
     Long phonenumber= rs.getLong("phone_num");
     UserDetails user = new UserDetails();
     user.setCustomername(customername);
-    user.setPassword(password);
+   // user.setPassword(password);
     user.setPhoneno(phonenumber);
     
     return user;
